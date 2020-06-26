@@ -47,9 +47,6 @@ int main(int argc, char** argv) {
     char* opts = "ULNl:c:h";
     int opt = 0;
     while((opt = getopt(argc, argv, opts)) != -1 ) {
-//DEBUG("__3");
-//    if(opterr != 0)
-//      return 1;
       switch(opt) {
         case 'U':
           set_upper_char = TRUE;
@@ -81,40 +78,19 @@ int main(int argc, char** argv) {
           printf("Invalid argument.\n");
           return 1;
 
-//        default:
-//        printf("Invalid option.\n");
-
-/*        default:
-          DEBUG("DEBUG_default\n");
-          set_upper_char = TRUE;
-          set_lower_char = TRUE;
-          set_numbers = TRUE;
-*/
       }
     }
   }
-/*  else {
 
-  //  DEBUG("DEBUG_1\n");
 
-    passwd_counts ? NOP : (passwd_counts = 10);
-    passwd_length ? NOP : (passwd_length = 8);
-    set_upper_char = TRUE;
-    set_lower_char = TRUE;
-    set_numbers = TRUE;
-  }
-*/
+  passwd_counts ? NOP : (passwd_counts = 10);
+  passwd_length ? NOP : (passwd_length = 8);
 
   if(!set_user_settings) {
-    passwd_counts ? NOP : (passwd_counts = 10);
-    passwd_length ? NOP : (passwd_length = 8);
     set_upper_char = TRUE;
     set_lower_char = TRUE;
     set_numbers = TRUE;
-
   }
-
-//DEBUG("__2");
 
   for(; passwd_counts > 0; passwd_counts--) {
     for(int i = passwd_length; i > 0; i--) {
@@ -157,12 +133,4 @@ int main(int argc, char** argv) {
     printf("\n");
   }
 
-
-/*  char a1 = 0;
-  for (int i = 0; i < 8; i++) {
-    a1 = get_rand_range(65, 90);
-    printf("%c", a1);
-}
-    printf("\n");
-*/
 }
